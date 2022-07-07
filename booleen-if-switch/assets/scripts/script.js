@@ -32,21 +32,22 @@ const btn = document.getElementById("btn");
 const resultat = document.getElementById("result");
 
 btn.addEventListener("click", () => {
-  userAnswerValue = parseInt(userAnswer.value);
-  if (userAnswerValue === 0) {
-    resultat.innerHTML = `Reservoir vide !`;
-  } else if (userAnswerValue > 0 && userAnswerValue < 10) {
-    resultat.innerHTML = `Reservoir presque vide !`;
-  } else if (userAnswerValue > 10 && userAnswerValue < 50) {
-    resultat.innerHTML = `Reservoir niveau normal !`;
-  } else if (userAnswerValue === 50) {
-    resultat.innerHTML = `Reservoir plein !`;
-  } else {
+  userAnswerValue = parseFloat(userAnswer.value);
+  if (isNaN(userAnswerValue) || userAnswerValue < 0 || userAnswerValue > 50) {
     //   resultat.style.color = 'red';
     resultat.classList.add("resultat");
     resultat.innerHTML = "Veuillez entrer une valeur correcte!";
+  } else if (userAnswerValue === 0) {
+    resultat.innerHTML = `Reservoir vide !`;
+  } else if (userAnswerValue <= 10) {
+    resultat.innerHTML = `Reservoir presque vide !`;
+  } else if (userAnswerValue < 50) {
+    resultat.innerHTML = `Reservoir niveau normal !`;
+  } else {
+    resultat.innerHTML = `Reservoir plein !`; // === 50
   }
 });
+
 const biss = document.getElementById("biss");
 
 const btn2 = document.getElementById("btn2");
