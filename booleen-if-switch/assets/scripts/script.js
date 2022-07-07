@@ -64,7 +64,7 @@ btn2.addEventListener("click", () => {
 // 3) "Obtenir l'etat (liquide/solide/gazeux) d'un liquide en fonction de la temperature"
 // La page Web qui permet à l'utilisateur d'encoder une temperature
 // En fonction de la temperature, la page web indique l'etat de l'eau.
-// À pression atmosphérique normale (1013,25 hPa), l'eau pure, distillée, est solide (glace) pour une température inférieure à 0 °C , liquide pour une température comprise entre 0 °C et 100 °C , et à l'état gazeux (vapeur d'eau) pour des températures supérieures.
+// À pression atmosphérique normale, l'eau pure, distillée, est solide (glace) pour une température inférieure à 0 °C , liquide pour une température comprise entre 0 °C et 100 °C , et à l'état gazeux (vapeur d'eau) pour des températures supérieures.
 
 const usernb = document.getElementById("usernb");
 const btnEtat = document.getElementById("btnEtat");
