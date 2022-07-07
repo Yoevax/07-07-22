@@ -55,11 +55,18 @@ const resultat2 = document.getElementById("result2");
 
 btn2.addEventListener("click", () => {
   bissValue = parseInt(biss.value);
-  if ((bissValue % 4 === 0 && !bissValue % 100 == 0) || bissValue % 400 === 0) {
-    resultat2.innerHTML = `c'est bien une année bissextile !`;
+  let verbe;
+
+  if ((bissValue % 4 === 0 && bissValue % 100 !== 0) || bissValue % 400 === 0) {
+    verbe = "est";
   } else {
-    resultat2.innerHTML = `ce n'est pas une année bissextile !`;
+    verbe = "n'est pas";
   }
+  // Ternaire -> condition ? valeur_si_vrai : valeur_si_faux
+  // const verbe2 =
+  //   (bissValue % 4 === 0 && bissValue % 100 !== 0) || bissValue % 400 === 0 ? "est" : "n'est pas";
+
+  resultat2.innerHTML = `L'année ${bissValue} ${verbe} bissextile !`;
 });
 
 // 3) "Obtenir l'etat (liquide/solide/gazeux) d'un liquide en fonction de la temperature"
